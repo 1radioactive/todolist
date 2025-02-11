@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="container">
+    <div class="sidebar">
+        <h1>My To-Do List</h1>
+        <ul id="projectlist">
+        </ul>
+        <button id="newproject">+ New Project</button>
+        <div class="project-overlay" id="projectOverlay"></div>
+        <div class="projectform" id="customProjectForm">
+                <h3>Add New Project</h3>
+                <form id="projectform">
+                    <label for="projectname">Project Name:</label>
+                    <input type="text" id="projectname" name="projectname" required>
+                    <br>
+                    <button type="submit" id="saveproject" class="saveproject">Save</button>
+                    <button type="cancel" id="cancelproject">Cancel</button>
+                </form>
+            </div>
+    </div>
+    <div class="content">
+        <button type="button" id="listall">List all projects</button>
+        <div class="projects">
+            <div class="project default">
+                <div id="projectheading">
+                    <h2 id="projecttitle"></h2>
+                    <button type="button" id="removeproject">Delete Project</button>
+                </div>
+                <div class="projectitems">
+                    
+                </div>
+                <div class="detailed-overlay" id="detailedOverlay"></div>
+                <div class="detailedclass" id="detailed">
+                    <h3 id="detailedheading"></h3>
+                    <p id="detaileddescription"></p>
+                    <p id="detaileddate"></p>
+                    <p id="detailedpriority"></p>
+                    <p id="detailednotes"></p>
+                    <button type="button" id="complete">Mark As Complete</button>
+                    <button type="button" id="deletetodo">Delete To-Do</button>
+                </div>
+
+                <div class="additem">
+                        <button>+</button>
+                        <div class="modal-overlay" id="modalOverlay"></div>
+                        <div class="modal" id="customForm">
+                            <h3>Create New To-Do</h3>
+                            <form id="form">
+                                <label for="heading">Heading:</label>
+                                <input type="text" id="heading" name="heading" required>
+                                <br>
+                                <label for="description">Description:</label>
+                                <input type="description" id="description" name="description">
+                                <br>
+                                <label for="duedate">Due Date:</label>
+                                <input type="date" id="duedate" name="duedate" required>
+                                <br>
+                                <label for="priority">Priority:</label>
+                                <label><input type="radio" name="priority" value="low" checked>Low</label>
+                                <label><input type="radio" name="priority" value="medium">Medium</label>
+                                <label><input type="radio" name="priority" value="high">High</label>
+                                <br>
+                                <label for="notes">Notes:</label>
+                                <input type="textarea" id="notes" name="notes">
+                                <br>
+                                <label for="selectedproject">Choose a Project:</label>
+                                <select id="selectedproject" name="dropdown"></select>
+                                <br>
+                                <button type="submit" id="save">Save</button>
+                                <button type="cancel" id="cancel">Cancel</button>
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+</html>

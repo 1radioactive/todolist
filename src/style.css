@@ -1,0 +1,309 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+/*Sidebar*/
+
+.sidebar{
+    color: whitesmoke;
+    grid-area: 1/1/2/2;
+    display: flex;
+    flex-direction: column;
+    background-color: #070329;
+    height: 100vh;
+    align-items: center;
+    min-width: max-content;
+}
+
+li{
+    list-style: none;
+}
+
+.projecttype{
+    color: whitesmoke;
+    display: block;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.sidebar h1{
+    padding: 50px 0;
+}
+
+#projectlist{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.sidebar #newproject{
+    background-color: #070329;
+    color: whitesmoke;
+    padding: 10px;
+    border: none;
+    font-size: 1rem;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+/*Content*/
+
+.content{
+    grid-area: 1/2/2/3;
+    background-color: #081645;
+    display: flex;
+    flex-direction: column;
+}
+
+#listall{
+    background-color: #081645;
+    padding: 10px;
+    border: none;
+    align-self: flex-end;
+    color: whitesmoke;
+}
+
+.projects{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3rem;
+}
+
+.projects .project{
+    height: 100%;
+    width: 100%;
+    background-color: 081645;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;  
+}
+
+#projectheading{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px double white;
+    margin-bottom: 10px;
+}
+
+#removeproject{
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+.projects h2{
+    color: white;
+    padding: 1rem;
+    text-align: left;
+
+}
+
+.projectitems{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.item{
+    background-color: white;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1.5rem;
+    padding-left: 10px;
+}
+
+.item h3{
+    text-align: left;
+    border-bottom: 1px grey solid;
+    font-size: 1.2rem;
+}
+
+.item .date{
+    text-align: right;
+}
+
+.item p{
+    padding: 0 1rem;
+    line-height: 1.5rem;
+    border-bottom: 1px grey solid;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.high{
+    background-color: red;
+    color: white;
+}
+
+.medium{
+    background-color: yellow;
+}
+
+
+.completed{
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
+    text-decoration-color: blue;
+}
+
+.additem button{
+    padding: 1px 2rem;
+    background-color: transparent;
+    font-size: 2rem;
+    color: white;
+    border-color: white;
+    margin-top: 20px;
+}
+
+
+/*From*/
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: 081645;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid white;
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.modal input, .modal button {
+    margin-top: 20px;
+}
+
+.modal label{
+    margin:auto;
+    padding: 5px;
+    text-align: justify;
+}
+
+.modal button{
+    font-size: 1.5rem;
+    margin: 20px 10px 0;
+    display: block;
+    justify-self: center;
+}
+
+#selectedproject{
+    width: 40%;
+    place-self: center;
+    margin-top: 20px
+}
+
+/*Add project Modal*/
+
+.projectform {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: 081645;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid white;
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.projectform h3{
+    text-align: center;
+}
+
+.project-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.projectform input, .projectform button {
+    margin-top: 20px;
+}
+
+.projectform label{
+    margin:auto;
+    padding: 5px;
+    text-align: justify;
+}
+
+.projectform button{
+    font-size: 1rem;
+    margin-top: 20px;
+    margin-right: 10px;
+    padding: 0 10px;
+}
+
+.saveproject{
+    margin-left: 25%;
+}
+
+/*Detailed List*/
+
+.detailedclass {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: 081645;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid white;
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.detailed-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.detailedclass p, .detailedclass button {
+    margin-top: 20px;
+}
